@@ -13,3 +13,5 @@ The Web Secure Coding training is designed for beginner students interested in l
 - Identifying and Mitigating Common Web Vulnerabilities (e.g., SQL Injection, XSS, CSRF)
 
 Each session includes a hands-on demo that allows students to experiment with both vulnerable and secure code, providing a practical understanding of the concepts discussed.
+
+Each session is uploaded on a separate branch.
