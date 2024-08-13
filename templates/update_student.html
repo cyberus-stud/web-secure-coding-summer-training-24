@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Student</title>
+</head>
+<body>
+    <h1>Update Student</h1>
+    <form action="{{ url_for('update_student', id=student.id) }}" method="POST">
+        <input type="text" name="name" value="{{ student.name }}">
+        <input type="number" name="age" value="{{ student.age }}">
+        <input type="text" name="grade" value="{{ student.grade }}">
+        <br><br>
+        <button type="submit">Update Student</button>
+    </form>
+    <a href="{{ url_for('index') }}">Back to Student List</a>
+</body>
+</html>
