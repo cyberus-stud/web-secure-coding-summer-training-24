@@ -1,0 +1,18 @@
+body {
+	background-color: #000;
+	min-height: 100vh;
+	margin: 0;
+}
+.centered-body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.form-container {
+	background-color: #ffffff;
+	border-radius: 10px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+.btn-primary {
+	background-color: #0f5c5f;
+}
