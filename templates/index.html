@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="stylesheet"
+			href="{{ url_for('static', filename='css/bootstrap.min.css') }}"
+		/>
+		<link
+			rel="stylesheet"
+			href="{{ url_for('static', filename='css/sty.css') }}"
+		/>
+		<title>Home</title>
+	</head>
+	<body class="centered-body">
+		<header class="navbar">
+			<div class="brand">Cyberus Community</div>
+			<ul class="nav-links">
+				<li><a href="{{ url_for('setting', username=session['username']) }}">Settings</a></li>
+				<li><a href="/logout">Logout</a></li>
+			</ul>
+		</header>
+
+		<div class="container mt-5">
+            <h1 class="animated-heading">Web Secure Coding Summer Training 2024</h1>
+        </div>
+
+	</body>
+</html>
