@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+    <title>Comments</title>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-md-9 col-lg-9 form-container p-4 mt-5 me-1">
+                <hr />
+                <div>
+                    {% for comment in comments %}
+                    <div class="col-md-12 col-lg-12 py-2 px-3 mt-1 border border-3">
+                        <h5>{{comment[0]}} | <small>{{comment[2]}}</small></h5>
+                        <hr />
+                        <p>{{comment[1] | safe}}</p>
+                    </div>
+                    {% endfor %}
+                </div>
+                <hr />
+                <form class="login-form" method="post" action="{{ url_for('addComment') }}">
+                    <div class="mb-3">
+                        <textarea class="form-control" placeholder="Comment" required name="comment"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Post Comment</button>
+                </form>
+                <form class="login-form mt-2" method="post" action="{{ url_for('clearComments') }}">
+                    <button type="submit" class="btn btn-danger">Clear All Comments</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
+</body>
+</html>
