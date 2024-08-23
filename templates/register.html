@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}" />
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+		<title>Register Page</title>
+	</head>
+	<body class="centered-body">
+		<div class="container">
+			{% include 'includes/alert.html' %}
+			<div class="row justify-content-center">
+				<div class="col-md-6 col-lg-4 form-container p-4 mt-5">
+					<h2 class="text-center mb-4">Register</h2>
+					<form class="register-form" method="post" action="/register">
+						<div class="mb-3">
+							<input type="text" class="form-control" placeholder="Username" required name="username" />
+						</div>
+						<div class="mb-3">
+							<input
+								type="password"
+								class="form-control"
+								placeholder="Password"
+								required
+								name="password"
+							/>
+						</div>
+						<button type="submit" class="btn btn-primary w-100">Register</button>
+					</form>
+				</div>
+			</div>
+		</div>
+		<script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='js/close-all-alerts.js') }}"></script>
+	</body>
+</html>
