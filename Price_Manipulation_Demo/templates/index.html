@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Product Store</title>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>Products</h1>
+        <div class="row">
+            {% for product in products %}
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ product.name }}</h5>
+                        <p class="card-text">Price: ${{ product.price }}</p>
+                        <a href="{{ url_for('add_to_cart', product_id=product.id, product_name=product.name, price=product.price) }}" class="btn btn-primary">
+                            Add to Cart
+                        </a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <a href="{{ url_for('cart') }}" class="btn btn-success mt-4">View Cart</a>
+    </div>
+</body>
+</html>
