@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Checkout</title>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>Checkout</h1>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Product Name: {{ name }}</h5>
+                        <p class="card-text">Product ID: {{ product_id }}</p>
+                        <p class="card-text">Price: ${{ price }}</p>
+                        <!-- Optionally, include a form to confirm the purchase -->
+                        <form action="{{ url_for('confirm_purchase') }}" method="POST">
+                            <input type="hidden" name="product_id" value="{{ product_id }}">
+                            <input type="hidden" name="name" value="{{ name }}">
+                            <input type="hidden" name="price" value="{{ price }}">
+                            <button type="submit" class="btn btn-primary">Confirm Purchase</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
